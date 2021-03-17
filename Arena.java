@@ -7,7 +7,7 @@
  */
 public class Arena
 {
-    private final int MAXDOGS = 1, MAXCATS = 1;
+    private final int MAXDOGS = 3, MAXCATS = 3;
     
     // this is the new shit // making array of dogs and cats holding objects
     private Dog[] dogs = new Dog[MAXDOGS];
@@ -55,14 +55,23 @@ public class Arena
         }
     }
     
-    public void fight(Dog dog, Cat cat)
+    public void fight()
     {
         while (cats[0].isAlive() == true && dogs[0].isAlive())
         {
             this.dogAttack(dogs[0], cats[0]);
-            System.out.println(cat.getName() + " has " + cat.getHP() + "hp");
             this.catAttack(dogs[0], cats[0]);
-            System.out.println(dog.getName() + " has " + dog.getHP() + "hp");
+            returnWinner(dogs[0], cats[0]);
         }
     }
+    
+    public void returnWinner(Dog dog, Cat cat)
+    {
+        System.out.println(cat.getName() + " has " + cat.getHP() + "hp");
+        System.out.println(dog.getName() + " has " + dog.getHP() + "hp\n");
+    }
+    
+    
+    
+    
 }

@@ -12,6 +12,5 @@ public class Simulate
         Arena a1 = new Arena();
         a1.fillKennel();
         a1.fight();
-        
     }
 }
